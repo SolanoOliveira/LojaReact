@@ -1,4 +1,6 @@
-const Navigation = () => {
+import React from 'react';
+
+const Navigation = ({ toggleCart }) => {
   return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary">
       <div className="container-fluid">
@@ -23,6 +25,11 @@ const Navigation = () => {
                 <li><a className="dropdown-item" href="#">Editar</a></li>
                 <li><a className="dropdown-item" href="#">Deletar</a></li>
               </ul>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link" href="#" onClick={toggleCart}>
+                Carrinho
+              </a>
             </li>
           </ul>
         </div>
