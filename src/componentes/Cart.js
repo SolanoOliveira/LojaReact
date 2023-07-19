@@ -11,14 +11,18 @@ const Cart = ({ items, handleDeleteItem, handleCloseCart }) => {
       contentLabel="Carrinho"
     >
       <h2>Carrinho</h2>
-      <ul>
-        {items.map((item, index) => (
-          <li key={index}>
-            {item.name} - {item.price}
-            <button onClick={() => handleDeleteItem(index)}>Deletar</button>
-          </li>
-        ))}
-      </ul>
+      {items.length === 0 ? (
+        <p>Carrinho vazio</p>
+      ) : (
+        <ul>
+          {items.map((item, index) => (
+            <li key={index}>
+              {item.name} - {item.price}
+              <button onClick={() => handleDeleteItem(index)}>Deletar</button>
+            </li>
+          ))}
+        </ul>
+      )}
       <button onClick={handleCloseCart}>Voltar</button>
     </Modal>
   );
